@@ -21,7 +21,6 @@
     "url": "https://github.com/supersheep/put-in/issues"
   },
   "dependencies": {
-    "touch": "0.0.2",
     "fs-sync": "~0.2.4"
   }
 }
