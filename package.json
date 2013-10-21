@@ -1,0 +1,27 @@
+{
+  "name": "put-in",
+  "version": "0.0.1",
+  "description": "install a node package into a specific folder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/supersheep/put-in.git"
+  },
+  "keywords": [
+    "npm",
+    "install",
+    "package"
+  ],
+  "author": "spud",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/supersheep/put-in/issues"
+  },
+  "dependencies": {
+    "touch": "0.0.2",
+    "fs-sync": "~0.2.4"
+  }
+}
