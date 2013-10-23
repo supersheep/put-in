@@ -12,6 +12,10 @@ Putin.prototype.install = function(module,callback){
     var cwd = this.cwd
     var file = path.resolve(cwd,"package.json");
 
+    if(module instanceof Array){
+        module = module.join(" ");
+    }
+    
     fs_sync.write(file, "{}");
 
     var install = child_process.spawn('npm',['install',module],{
