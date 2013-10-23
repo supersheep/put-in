@@ -11,14 +11,19 @@ var Putin =  function(cwd){
 Putin.prototype.install = function(module,callback){
     var cwd = this.cwd
     var file = path.resolve(cwd,"package.json");
+    var args = ["install"];
 
     if(module instanceof Array){
-        module = module.join(" ");
+        module.forEach(function(mod){
+            args.push(mod);
+        });
+    }else{
+        args.push(module);
     }
     
     fs_sync.write(file, "{}");
 
-    var install = child_process.spawn('npm',['install',module],{
+    var install = child_process.spawn('npm', args, {
         cwd:cwd,
         stdio:"inherit"
     });
