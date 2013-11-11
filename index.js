@@ -9,9 +9,10 @@ var Putin =  function(cwd){
 }
 
 Putin.prototype.install = function(module,callback){
-    var cwd = this.cwd
+    var cwd = this.cwd;
     var file = path.resolve(cwd,"package.json");
     var args = ["install"];
+    var fake_added = false;
 
     if(module instanceof Array){
         module.forEach(function(mod){
@@ -21,7 +22,10 @@ Putin.prototype.install = function(module,callback){
         args.push(module);
     }
     
-    fs_sync.write(file, "{}");
+    if(!fs_sync.exists(file)){
+        fake_added = true;
+        fs_sync.write(file, "{}");
+    }
 
     var install = child_process.spawn('npm', args, {
         cwd:cwd,
@@ -30,6 +34,9 @@ Putin.prototype.install = function(module,callback){
 
 
 
+    install.on("exit",function(){
+        fs_sync.remove(file);
+    });
     install.on("exit",callback);
 }
 

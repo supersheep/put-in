@@ -1,6 +1,6 @@
 {
   "name": "put-in",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "install a node package into a specific folder",
   "main": "index.js",
   "scripts": {
