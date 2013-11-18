@@ -1,6 +1,6 @@
 {
   "name": "put-in",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "install a node package into a specific folder",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,7 @@
     "url": "https://github.com/supersheep/put-in/issues"
   },
   "dependencies": {
-    "fs-sync": "~0.2.4"
+    "fs-sync": "~0.2.4",
+    "temp": "~0.6.0"
   }
 }
